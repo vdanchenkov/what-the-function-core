@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import { findFunction, functions,  argumentCombinations } from './index';
-import lodash from './sources/lodash';
-import ramda from './sources/ramda';
+import lodash from 'lodash';
+import ramda from 'ramda';
 
 it('able to find lodash and ramda functions', () => {
   expect(findFunction(
