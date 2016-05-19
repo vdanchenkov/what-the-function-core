@@ -11,15 +11,40 @@ describe('outcomes()', () => {
         functions({test: {add, sub}}),
         argumentCombinations(2, 4)
     );
-    expect(result).to.eql(
-        `2
-  sub(b, a)
-6
-  add(a, b)
-  add(b, a)
--2
-  sub(a, b)
-`);
+    expect(result).to.eql({
+      '2': [
+        {
+          args: [4, 2],
+          argsOrder: [1, 0],
+          func: sub,
+          library: "test",
+          name: "sub"
+        }
+      ],
+      '6': [
+        {
+          args: [2, 4],
+          argsOrder: [0, 1],
+          func: add,
+          library: "test",
+          name: "add"
+        }, {
+          args: [4, 2],
+          argsOrder: [1, 0],
+          func: add,
+          library: "test",
+          name: "add"
+        }
+      ],
+      '-2': [
+        {
+          args: [2, 4],
+          argsOrder: [0, 1],
+          func: sub,
+          library: "test",
+          name: "sub"
+        }
+      ]
+    });
   });
-})
-
+});

@@ -12,10 +12,18 @@ describe('findFunctions()', () => {
         argumentCombinations(2, 4),
         6
     );
-    expect(result).to.eql(
-`test.add(a, b)
-test.add(b, a)
-`);
+    expect(result).to.eql([{
+      "args": [2, 4],
+      "argsOrder": [0, 1],
+      "func": add,
+      "library": "test",
+      "name": "add"
+    }, {
+      "args": [4, 2],
+      "argsOrder": [1, 0],
+      "func": add,
+      "library": "test",
+      "name": "add"
+    }])
   });
-})
-
+});
