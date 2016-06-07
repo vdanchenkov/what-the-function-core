@@ -16,6 +16,7 @@ describe('outcomes()', () => {
         {
           args: [4, 2],
           argsOrder: [1, 0],
+          argsLabels: ["4", "2"],
           func: sub,
           library: "test",
           name: "sub"
@@ -25,12 +26,14 @@ describe('outcomes()', () => {
         {
           args: [2, 4],
           argsOrder: [0, 1],
+          argsLabels: ["2", "4"],
           func: add,
           library: "test",
           name: "add"
         }, {
           args: [4, 2],
           argsOrder: [1, 0],
+          argsLabels: ["4", "2"],
           func: add,
           library: "test",
           name: "add"
@@ -40,6 +43,7 @@ describe('outcomes()', () => {
         {
           args: [2, 4],
           argsOrder: [0, 1],
+          argsLabels: ["2", "4"],
           func: sub,
           library: "test",
           name: "sub"
