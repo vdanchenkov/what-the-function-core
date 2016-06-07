@@ -3,7 +3,7 @@ export default (libs) => {
 
   for (let libraryName in libs) {
     const library = libs[libraryName];
-    for (let functionName in library) {
+    Object.getOwnPropertyNames(library).forEach(functionName => {
       const func = library[functionName];
       if (typeof func === 'function') {
         result.push({
@@ -12,7 +12,7 @@ export default (libs) => {
           func
         });
       }
-    }
+    })
   }
   return result;
 };
