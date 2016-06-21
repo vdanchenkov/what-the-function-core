@@ -1,7 +1,7 @@
-import { map } from 'lodash';
+import map from 'lodash/map';
 
 const prettyPrintDefinition = definition => {
-  return `  ${definition.name}(${definition.argsOrder.map(i => String.fromCharCode(97 + i)).join(', ')})`;
+  return `  ${definition.name}(${definition.argsLabels.join(', ')})`;
 };
 
 const prettyPrint = (outcomes) => {

@@ -1,4 +1,5 @@
-import { map, cloneDeep, isEqual } from 'lodash';
+import cloneDeep from 'lodash/cloneDeep'
+import isEqual from 'lodash/isEqual'
 
 const invoke = ({ func, args }) => func(...cloneDeep(args));
 

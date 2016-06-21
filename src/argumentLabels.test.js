@@ -18,4 +18,12 @@ describe('argumentLabels()', () => {
     expect(argumentLabels([[1, 2, 3], [4]])).to.eql(['array1', 'array2'])
   })
 
+  it('uses f label for single function', () => {
+    expect(argumentLabels([() => ({})])).to.eql(['f'])
+  })
+
+  it('uses f(n) label for multiple functions', () => {
+    expect(argumentLabels([() => ({}), () => ({})])).to.eql(['f1', 'f2'])
+  })
+
 });

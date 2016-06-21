@@ -1,4 +1,5 @@
-import { map, cloneDeep } from 'lodash';
+import map from 'lodash/map'
+import cloneDeep from 'lodash/cloneDeep'
 
 const invoke = ({ func, args }) => func(...cloneDeep(args));
 

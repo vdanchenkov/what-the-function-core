@@ -8,16 +8,16 @@ it('able to find lodash and ramda functions', () => {
   expect(
       wtf({ lodash, ramda })([1, 2, 3, 4], 2).eql([[1, 2], [3, 4]])
   ).to.eql(stripIndent`
-    lodash.chunk(a, b)
-    ramda.splitAt(b, a)
-    ramda.splitEvery(b, a)
+    lodash.chunk(array, 2)
+    ramda.splitAt(2, array)
+    ramda.splitEvery(2, array)
   ` + '\n');
 
   expect(
       wtf({ lodash, ramda })({a: 'x', b: 'y'}, i => i === 'x').eql('a')
   ).to.eql(stripIndent`
-    lodash.findKey(a, b)
-    lodash.findLastKey(a, b)
+    lodash.findKey(object, f)
+    lodash.findLastKey(object, f)
   `  + '\n');
 });
 
@@ -29,10 +29,10 @@ it('able to show outcomes', () => {
       wtf({ lib })(2, 2).outcomes()
   ).to.eql(stripIndent`
     0
-      sub(a, b)
-      sub(b, a)
+      sub(2, 2)
+      sub(2, 2)
     4
-      add(a, b)
-      add(b, a)
+      add(2, 2)
+      add(2, 2)
   ` + '\n');
 });

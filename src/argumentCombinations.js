@@ -7,6 +7,6 @@ export default (...args) => {
   return permutation(range(Math.min(permutableArgsNumber, args.length))).toArray().map(perm => {
     const argsOrder = perm.concat(range(permutableArgsNumber, args.length, 1));
     const argsValues = argsOrder.map(i => args[i]);
-    return { argsOrder: argsOrder, args: argsValues, argsLabels: argumentLabels(argsValues) };
+    return { args: argsValues, argsLabels: argumentLabels(argsValues) };
   });
 };

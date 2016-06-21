@@ -1,6 +1,7 @@
 import countBy from 'lodash/countBy';
 import isArray from 'lodash/isArray';
 import isPlainObject from 'lodash/isPlainObject';
+import isFunction from 'lodash/isFunction';
 
 export default (args) => {
   const arrCount = args.filter(isArray).length
@@ -9,6 +10,8 @@ export default (args) => {
   const objectCount = args.filter(isPlainObject).length
   let objectIndex = 1
 
+  const functionCount = args.filter(isFunction).length
+  let functionIndex = 1
 
   return args.map(arg => {
     if (typeof arg === 'number') {
@@ -19,6 +22,8 @@ export default (args) => {
       return arrCount === 1 ? 'array' : `array${arrIndex++}`
     } else if (isPlainObject(arg)) {
       return objectCount === 1 ? 'object' : `object${objectIndex++}`
+    } else if (isFunction(arg)) {
+      return functionCount === 1 ? 'f' : `f${objectIndex++}`
     } else {
       return arg.toString()
     }
