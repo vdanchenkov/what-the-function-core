@@ -1,4 +1,4 @@
-import map from 'lodash/map';
+import map from 'lodash/map'
 
 const prettyPrintDefinition = definition => {
   if (definition.display) {
@@ -6,10 +6,10 @@ const prettyPrintDefinition = definition => {
   } else {
     return `${definition.library}.${definition.name}(${definition.argsLabels.join(', ')})`
   }
-};
+}
 
 const prettyPrint = (results) => {
-  return map(results, prettyPrintDefinition).join('\n') + '\n';
-};
+  return map(results, prettyPrintDefinition).join('\n') + '\n'
+}
 
-export default prettyPrint;
+export default prettyPrint

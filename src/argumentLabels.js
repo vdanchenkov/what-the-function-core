@@ -1,7 +1,6 @@
-import countBy from 'lodash/countBy';
-import isArray from 'lodash/isArray';
-import isPlainObject from 'lodash/isPlainObject';
-import isFunction from 'lodash/isFunction';
+import isArray from 'lodash/isArray'
+import isPlainObject from 'lodash/isPlainObject'
+import isFunction from 'lodash/isFunction'
 
 export default (args) => {
   const arrCount = args.filter(isArray).length
@@ -23,9 +22,9 @@ export default (args) => {
     } else if (isPlainObject(arg)) {
       return objectCount === 1 ? 'object' : `object${objectIndex++}`
     } else if (isFunction(arg)) {
-      return functionCount === 1 ? 'f' : `f${objectIndex++}`
+      return functionCount === 1 ? 'f' : `f${functionIndex++}`
     } else {
       return arg.toString()
     }
-  });
-};
+  })
+}

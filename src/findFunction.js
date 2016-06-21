@@ -1,21 +1,21 @@
 import cloneDeep from 'lodash/cloneDeep'
 import isEqual from 'lodash/isEqual'
 
-const invoke = ({ func, args }) => func(...cloneDeep(args));
+const invoke = ({ func, args }) => func(...cloneDeep(args))
 
 export default (functions, argumentCombinations, result) => {
-  const results = [];
+  const results = []
   for (const f of functions) {
     for (const a of argumentCombinations) {
-      const def = {...a, ...f};
+      const def = { ...a, ...f }
       try {
         if (isEqual(invoke(def), result)) {
-          results.push(def);
+          results.push(def)
         }
       } catch (e) {
-
+        // ignored
       }
     }
   }
-  return results;
-};
+  return results
+}
