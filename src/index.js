@@ -1,13 +1,17 @@
 import argumentCombinations from './argumentCombinations'
-import functions from './functions'
+import builtInFunctions from './builtInFunctions'
 import findFunction from './findFunction'
+import functions from './functions'
 import outcomes from './outcomes'
 import snippets from './snippets'
+import suggestionToString from './suggestionToString'
 
 export {
   argumentCombinations,
-  functions,
+  builtInFunctions,
   findFunction,
+  functions,
   outcomes,
-  snippets
+  snippets,
+  suggestionToString
 }

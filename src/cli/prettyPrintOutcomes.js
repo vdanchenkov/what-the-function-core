@@ -1,11 +1,6 @@
-import map from 'lodash/map'
+import printSuggestion from './../suggestionToString'
 
-const prettyPrintDefinition = definition => {
-  return `  ${definition.name}(${definition.argsLabels.join(', ')})`
-}
-
-const prettyPrint = (outcomes) => {
-  return map(outcomes, (v, k) => `${k}\n${v.map(prettyPrintDefinition).join('\n')}`).join('\n') + '\n'
-}
-
-export default prettyPrint
+export default (outcomes) => 
+  Object.entries(outcomes)
+    .map(([ result, suggestions ]) => `${result}\n${suggestions.map(def => '  ' + printSuggestion(def)).join('\n')}`)
+    .join('\n') + '\n'

@@ -29,10 +29,10 @@ it('able to show outcomes', () => {
       wtf({ lib })(2, 2).outcomes()
   ).to.eql(stripIndent`
     0
-      sub(2, 2)
-      sub(2, 2)
+      lib.sub(2, 2)
+      lib.sub(2, 2)
     4
-      add(2, 2)
-      add(2, 2)
+      lib.add(2, 2)
+      lib.add(2, 2)
   ` + '\n')
 })
