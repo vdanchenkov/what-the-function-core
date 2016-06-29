@@ -1,4 +1,4 @@
-import functions from './functions'
+import functions from './functionsFromModules'
 
 const arithmetics = [ '+', '-', '/', '*' ].map(operator => ({
   display: `$0 ${operator} $1`,

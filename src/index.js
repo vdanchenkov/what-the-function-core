@@ -1,17 +1,13 @@
-import argumentCombinations from './argumentCombinations'
 import builtInFunctions from './builtInFunctions'
-import findFunction from './findFunction'
-import functions from './functions'
-import outcomes from './outcomes'
+import printEql from './printEql'
+import printOutcomes from './printOutcomes'
 import snippets from './snippets'
-import suggestionToString from './suggestionToString'
+import wtf from './wtf'
 
 export {
-  argumentCombinations,
+  wtf as default,
+  printEql,
+  printOutcomes,
   builtInFunctions,
-  findFunction,
-  functions,
-  outcomes,
-  snippets,
-  suggestionToString
+  snippets
 }
