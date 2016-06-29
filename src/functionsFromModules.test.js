@@ -8,8 +8,8 @@ describe('functionsFromModules()', () => {
     const result = functionsFromModules({ libname: { a, b } })
     expect(result).to.be.an.array
     expect(result[0].func).to.be.eql(a)
-    expect(result[0].display([ 1 ])).to.be.eql('libname.a(1)')
+    expect(result[0].display(1)).to.be.eql('libname.a(1)')
     expect(result[1].func).to.be.eql(b)
-    expect(result[1].display([ 1 ])).to.be.eql('libname.b(1)')
+    expect(result[1].display(1)).to.be.eql('libname.b(1)')
   })
 })

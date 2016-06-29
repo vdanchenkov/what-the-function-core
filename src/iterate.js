@@ -10,7 +10,7 @@ export default function *(functionList, argumentList, options = {}) {
       let display
       try {
         result = f.func(...a.args)
-        display = f.display(a.argsLabels)
+        display = f.display(...a.argsLabels)
       } catch (e) {
         // ignored
       }

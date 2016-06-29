@@ -1,7 +1,7 @@
 import functions from './functionsFromModules'
 
 const arithmetics = [ '+', '-', '/', '*' ].map(operator => ({
-  display: `$0 ${operator} $1`,
+  display: (a, b) => [ a, operator, b ].join(' '),
   func: new Function('a', 'b', `return a ${operator} b`)
 }))
 
@@ -15,7 +15,7 @@ const instanceMethodsAndProperties = (constructor) => {
             return prototype[key].call(...args)
           }
         },
-        display: `$0.${key}($1...)`
+        display: (obj, ...rest) => `${obj}.${key}(${rest.join(', ')})`
       }
     } else {
       return {
@@ -24,7 +24,7 @@ const instanceMethodsAndProperties = (constructor) => {
             return args[0][key]
           }
         },
-        display: `$0.${key}`
+        display: (obj) => `${obj}.${key}`
       }
     }
   })

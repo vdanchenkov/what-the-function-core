@@ -7,7 +7,7 @@ export default (libs) => {
       const func = library[functionName]
       if (typeof func === 'function') {
         result.push({
-          display: (args) => `${libraryName}.${functionName}(${args.join(', ')})`,
+          display: (...args) => `${libraryName}.${functionName}(${args.join(', ')})`,
           func
         })
       }
