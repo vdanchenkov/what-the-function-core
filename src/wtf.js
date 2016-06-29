@@ -13,5 +13,5 @@ export default (...functions) => (...args) => (options) => {
     }
   })
   const argsList = argumentCombinations(args)
-  return iterate(functionList, argsList)
+  return iterate(functionList, argsList, options)
 }
