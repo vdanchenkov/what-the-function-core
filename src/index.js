@@ -5,7 +5,7 @@ import snippets from './snippets'
 import wtf from './wtf'
 
 export {
-  wtf as default,
+  wtf,
   printEql,
   printOutcomes,
   builtInFunctions,
