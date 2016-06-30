@@ -5,7 +5,7 @@ export default function *(functionList, argumentList, options = {}) {
   for (const f of functionList) {
     for (const a of argumentList) {
       current++
-      if (options.start && current <= options.start) continue
+      if (options.skip && current <= options.skip) continue
       let result
       let display
       try {
