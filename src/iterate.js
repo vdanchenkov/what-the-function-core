@@ -1,5 +1,4 @@
 export default function *(functionList, argumentList, options = {}) {
-  const total = functionList.length * argumentList.length
   let current = 0
 
   for (const f of functionList) {
@@ -14,7 +13,7 @@ export default function *(functionList, argumentList, options = {}) {
       } catch (e) {
         // ignored
       }
-      yield { total, current, result, display }
+      yield { current, result, display }
     }
   }
 }

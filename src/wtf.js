@@ -4,7 +4,7 @@ import flatMap from 'lodash/flatMap'
 import iterate from './iterate'
 import isArray from 'lodash/isArray'
 
-export default (...functions) => (...args) => (options) => {
+export default (...functions) => (...args) => {
   const functionList = flatMap(functions, arg => {
     if (isArray(arg)) {
       return arg
@@ -13,5 +13,10 @@ export default (...functions) => (...args) => (options) => {
     }
   })
   const argsList = argumentCombinations(args)
-  return iterate(functionList, argsList, options)
+
+  const total = functionList.length * argsList.length
+  return {
+    total,
+    outcomes(options) { return iterate(functionList, argsList, options)}
+  }
 }
