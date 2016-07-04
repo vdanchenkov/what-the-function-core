@@ -15,8 +15,13 @@ export default (...functions) => (...args) => {
   const argsList = argumentCombinations(args)
 
   const total = functionList.length * argsList.length
-  return {
+  const result = options => ({
     total,
-    outcomes(options) { return iterate(functionList, argsList, options)}
-  }
+    [ Symbol.iterator ]: () => iterate(functionList, argsList, options)
+  })
+
+  result.total = total
+  result[ Symbol.iterator ] = () => iterate(functionList, argsList)
+
+  return result
 }
