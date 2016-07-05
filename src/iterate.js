@@ -1,3 +1,5 @@
+import cloneDeep from 'lodash/cloneDeep'
+
 export default function *(functionList, argumentList, options = {}) {
   let current = 0
 
@@ -8,8 +10,8 @@ export default function *(functionList, argumentList, options = {}) {
       let result
       let display
       try {
-        result = f.func(...a.args)
         display = f.display(...a.argsLabels)
+        result = f.func(...cloneDeep(a.args))
       } catch (e) {
         // ignored
       }
