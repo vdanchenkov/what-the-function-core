@@ -16,25 +16,29 @@ describe('wtf()', () => {
     expect(outcomes.next()).to.eql({ done: false, value: {
       current: 1,
       display: 'testModule.add(2, 4)',
-      result: 6
+      result: 6,
+      modified: false
     } })
 
     expect(outcomes.next()).to.eql({ done: false, value: {
       current: 2,
       display: 'testModule.add(4, 2)',
-      result: 6
+      result: 6,
+      modified: false
     } })
 
     expect(outcomes.next()).to.eql({ done: false, value: {
       current: 3,
       display: 'testModule.sub(2, 4)',
-      result: -2
+      result: -2,
+      modified: false
     } })
 
     expect(outcomes.next()).to.eql({ done: false, value: {
       current: 4,
       display: 'testModule.sub(4, 2)',
-      result: 2
+      result: 2,
+      modified: false
     } })
 
     expect(outcomes.next()).to.eql({ done: true, value: undefined })
@@ -53,13 +57,15 @@ describe('wtf()', () => {
     expect(outcomes.next()).to.eql({ done: false, value: {
       current: 3,
       display: 'testModule.sub(2, 4)',
-      result: -2
+      result: -2,
+      modified: false
     } })
 
     expect(outcomes.next()).to.eql({ done: false, value: {
       current: 4,
       display: 'testModule.sub(4, 2)',
-      result: 2
+      result: 2,
+      modified: false
     } })
 
     expect(outcomes.next()).to.eql({ done: true, value: undefined })

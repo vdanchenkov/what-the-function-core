@@ -1,4 +1,5 @@
 import cloneDeep from 'lodash/cloneDeep'
+import isEqual from 'lodash/isEqual'
 
 export default function *(functionList, argumentList, options = {}) {
   let current = 0
@@ -9,13 +10,16 @@ export default function *(functionList, argumentList, options = {}) {
       if (options.skip && current <= options.skip) continue
       let result
       let display
+      let modified
       try {
         display = f.display(...a.argsLabels)
-        result = f.func(...cloneDeep(a.args))
+        const clonedArgs = cloneDeep(a.args)
+        result = f.func(...clonedArgs)
+        modified = !isEqual(a.args, clonedArgs)
       } catch (e) {
         // ignored
       }
-      yield { current, result, display }
+      yield { current, result, display, modified }
     }
   }
 }
