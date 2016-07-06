@@ -18,9 +18,9 @@ export default (args) => {
     } else if (typeof arg === 'string') {
       return `'${arg}'`
     } else if (isArray(arg)) {
-      return arrCount === 1 ? 'array' : `array${arrIndex++}`
+      return arrCount === 1 ? 'arr' : `arr${arrIndex++}`
     } else if (isPlainObject(arg)) {
-      return objectCount === 1 ? 'object' : `object${objectIndex++}`
+      return objectCount === 1 ? 'obj' : `obj${objectIndex++}`
     } else if (isFunction(arg)) {
       return functionCount === 1 ? 'f' : `f${functionIndex++}`
     } else {

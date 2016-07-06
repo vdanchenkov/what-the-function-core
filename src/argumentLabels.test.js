@@ -11,11 +11,11 @@ describe('argumentLabels()', () => {
   })
 
   it('uses arr label for single array', () => {
-    expect(argumentLabels([ [ 1, 2, 3 ] ])).to.eql([ 'array' ])
+    expect(argumentLabels([ [ 1, 2, 3 ] ])).to.eql([ 'arr' ])
   })
 
   it('uses arr(n) label for multiple arrays', () => {
-    expect(argumentLabels([ [ 1, 2, 3 ], [ 4 ] ])).to.eql([ 'array1', 'array2' ])
+    expect(argumentLabels([ [ 1, 2, 3 ], [ 4 ] ])).to.eql([ 'arr1', 'arr2' ])
   })
 
   it('uses f label for single function', () => {
